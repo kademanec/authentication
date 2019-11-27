@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app5/auth.dart';
 import 'package:flutter_app5/auth_provider.dart';
 import 'saleshomepage.dart';
+import 'taskhomepage.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({this.onSignedOut});
@@ -30,22 +31,40 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: Container(
-        child:Center(
-        child:RaisedButton(
-          color:Colors.blue,
+        child:Column(
+          children: <Widget>[
+            RaisedButton(
+            color:Colors.blue,
             child: Text('Population Bar Chart'),
             onPressed: (){
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder:(context){
-                  return SalesHomePage();
-                }
-              ),
-            );
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder:(context){
+                      return SalesHomePage();
+                    }
+                ),
+              );
 
             },
-        ),
+          ),
+            RaisedButton(
+              color:Colors.blue,
+              child: Text('Population Pie Chart'),
+              onPressed: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder:(context){
+                        return TaskHomePage();
+                      }
+                  ),
+                );
+
+              },
+            ),
+          ],
+
         ),
       ),
     );
