@@ -31,24 +31,30 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: Container(
-        child:Column(
+        child:Center(
+          child:Column(
+//            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            RaisedButton(
-            color:Colors.blue,
-            child: Text('Population Bar Chart'),
-            onPressed: (){
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder:(context){
-                      return SalesHomePage();
-                    }
-                ),
-              );
 
-            },
-          ),
             RaisedButton(
+
+              color:Colors.blue,
+              child: Text('Population Bar Chart'),
+              onPressed: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder:(context){
+                        return SalesHomePage();
+                      }
+                  ),
+                );
+
+              },
+            ),
+            RaisedButton(
+
               color:Colors.blue,
               child: Text('Population Pie Chart'),
               onPressed: (){
@@ -66,6 +72,8 @@ class HomePage extends StatelessWidget {
           ],
 
         ),
+        ),
+
       ),
     );
   }

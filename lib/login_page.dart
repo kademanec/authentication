@@ -79,22 +79,48 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter app'),
+        title: Text('QtPi Robotics'),
+
       ),
       body: Container(
+
+
         padding: EdgeInsets.all(16.0),
-        child: Form(
-          key: formKey,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: buildInputs() + buildSubmitButtons(),
-          ),
-        ),
+        child: Column(
+
+
+            children: <Widget>[
+
+
+
+              Form(
+                key: formKey,
+                child:
+                Column(
+
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: buildInputs() + buildSubmitButtons(),
+                ),
+              ),
+              Image(
+                image:
+                AssetImage('images/qtpi.jpg'),
+                height: 140.0 ,
+                width: 300.0 ,
+              ),
+
+
+            ]
+        )
+
+
       ),
     );
   }
 
   List<Widget> buildInputs() {
+
+
     return <Widget>[
       TextFormField(
         key: Key('email'),
