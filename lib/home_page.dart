@@ -20,7 +20,9 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
+
       appBar: AppBar(
         title: Text('Welcome'),
         actions: <Widget>[
@@ -30,12 +32,22 @@ class HomePage extends StatelessWidget {
           )
         ],
       ),
-      body: Container(
+      body:
+
+      Container(
+
         child:Center(
+
+
           child:Column(
-//            mainAxisAlignment: MainAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+
           children: <Widget>[
+
+
+
+
 
             RaisedButton(
 
@@ -53,6 +65,13 @@ class HomePage extends StatelessWidget {
 
               },
             ),
+
+            Image(
+              image:
+              AssetImage('images/1.jpg'),
+
+            ),
+
             RaisedButton(
 
               color:Colors.blue,
@@ -69,6 +88,7 @@ class HomePage extends StatelessWidget {
 
               },
             ),
+
           ],
 
         ),
