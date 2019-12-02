@@ -34,7 +34,7 @@ class _SalesHomePageState extends State<SalesHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Population Growth')),
+      appBar: AppBar(title: Text('Sales Growth')),
       body: _buildBody(context),
     );
   }
@@ -64,7 +64,7 @@ class _SalesHomePageState extends State<SalesHomePage> {
           child: Column(
             children: <Widget>[
               Text(
-                'Population by year',
+                'Sales by year',
                 style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
               ),
               SizedBox(
