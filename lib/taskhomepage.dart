@@ -32,7 +32,7 @@ class _TaskHomePageState extends State<TaskHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Statewise Population')),
+      appBar: AppBar(title: Text('Statewise Sales')),
       body: _buildBody(context),
     );
   }
@@ -62,7 +62,7 @@ class _TaskHomePageState extends State<TaskHomePage> {
           child: Column(
             children: <Widget>[
               Text(
-                'Population in each State',
+                'Sales in each State',
                 style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
               ),
               SizedBox(

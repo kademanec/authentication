@@ -34,6 +34,7 @@ class HomePage extends StatelessWidget {
       ),
       body:
 
+
       Container(
 
         child:Center(
@@ -52,7 +53,7 @@ class HomePage extends StatelessWidget {
             RaisedButton(
 
               color:Colors.blue,
-              child: Text('Population Bar Chart'),
+              child: Text('Sales Bar Chart'),
               onPressed: (){
                 Navigator.push(
                   context,
@@ -75,7 +76,7 @@ class HomePage extends StatelessWidget {
             RaisedButton(
 
               color:Colors.blue,
-              child: Text('Population Pie Chart'),
+              child: Text('Sales Pie Chart'),
               onPressed: (){
                 Navigator.push(
                   context,
