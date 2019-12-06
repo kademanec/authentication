@@ -5,14 +5,17 @@ import 'saleshomepage.dart';
 import 'taskhomepage.dart';
 
 class HomePage extends StatelessWidget {
+
   const HomePage({this.onSignedOut});
   final VoidCallback onSignedOut;
+
 
   Future<void> _signOut(BuildContext context) async {
     try {
       final BaseAuth auth = AuthProvider.of(context).auth;
       await auth.signOut();
       onSignedOut();
+
     } catch (e) {
       print(e);
     }

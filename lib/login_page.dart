@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app5/auth.dart';
 import 'package:flutter_app5/auth_provider.dart';
+import 'package:flutter_app5/home_page.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class EmailFieldValidator {
   static String validate(String value) {
@@ -10,13 +12,18 @@ class EmailFieldValidator {
 
 class PasswordFieldValidator {
   static String validate(String value) {
-    return value.isEmpty ? 'Password can\'t be empty' : null;
+    if(value.isEmpty){
+      return value.isEmpty ? 'Password can\'t be empty' : null;
+    }else{
+      return 'Password Incorrect';
+    }
   }
 }
 
 class LoginPage extends StatefulWidget {
   const LoginPage({this.onSignedIn});
   final VoidCallback onSignedIn;
+
 
   @override
   State<StatefulWidget> createState() => _LoginPageState();
@@ -29,10 +36,12 @@ enum FormType {
 
 class _LoginPageState extends State<LoginPage> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final  GoogleSignIn googleSignIn = GoogleSignIn();
 
   String _email;
   String _password;
   FormType _formType = FormType.login;
+
 
   bool validateAndSave() {
     final FormState form = formKey.currentState;
@@ -57,6 +66,7 @@ class _LoginPageState extends State<LoginPage> {
         widget.onSignedIn();
       } catch (e) {
         print('Error: $e');
+        PasswordFieldValidator.validate("incorrect");
       }
     }
   }
@@ -83,6 +93,7 @@ class _LoginPageState extends State<LoginPage> {
         title: Text('QtPi Robotics'),
 
       ),
+      resizeToAvoidBottomInset: false,
       body: Container(
 
 
@@ -150,6 +161,29 @@ class _LoginPageState extends State<LoginPage> {
         FlatButton(
           child: Text('Create an account', style: TextStyle(fontSize: 20.0)),
           onPressed: moveToRegister,
+        ),
+        FlatButton(
+          child: Text("Sign in with Google"),
+          color: Colors.lightGreen,
+          onPressed: () async {
+            try {
+              final _auth = AuthProvider.of(context).auth;
+              final id = await _auth.signInWithGoogle();
+
+
+//                Navigator.of(context).push(
+//                  MaterialPageRoute(
+//                    builder: (context) {
+//                      return HomePage();
+//                    },
+//                  ),
+//                );
+
+
+            } catch (e) {
+              print(e);
+            }
+          },
         ),
       ];
     } else {

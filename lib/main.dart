@@ -5,7 +5,9 @@ import 'package:flutter_app5/root_page.dart';
 
 void main() => runApp(MyApp());
 
+
 class MyApp extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return AuthProvider(

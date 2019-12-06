@@ -3,10 +3,12 @@ import 'package:flutter_app5/auth.dart';
 import 'package:flutter_app5/home_page.dart';
 import 'package:flutter_app5/login_page.dart';
 import 'package:flutter_app5/auth_provider.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class RootPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => _RootPageState();
+
 }
 
 enum AuthStatus {
@@ -17,6 +19,7 @@ enum AuthStatus {
 
 class _RootPageState extends State<RootPage> {
   AuthStatus authStatus = AuthStatus.notDetermined;
+  final  GoogleSignIn googleSignIn = GoogleSignIn();
 
   @override
   void didChangeDependencies() {
@@ -30,6 +33,7 @@ class _RootPageState extends State<RootPage> {
   }
 
   void _signedIn() {
+    googleSignIn.signOut();
     setState(() {
       authStatus = AuthStatus.signedIn;
     });
